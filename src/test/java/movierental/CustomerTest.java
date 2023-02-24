@@ -28,5 +28,12 @@ public class CustomerTest {
                 "You earned 7 frequent renter points";
 
         assertEquals(expected, customer.statement());
+
+        
+        Dispatcher dispatcher = new Dispatcher();
+        LoggerInterceptor logger = new LoggerInterceptor();
+        ContextObject contextObject = new ContextObject(new Movie("Jaws", Movie.REGULAR));
+        dispatcher.Attach(logger);
+        dispatcher.dispatch(contextObject);
     }
 }
